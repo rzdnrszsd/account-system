@@ -1,0 +1,20 @@
+# 应用名称
+spring:
+  application:
+    name: account-system
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+mybatis-plus:
+  config-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    auto-mapping-behavior: partial
+    map-underscore-to-camel-case: true
+
+
