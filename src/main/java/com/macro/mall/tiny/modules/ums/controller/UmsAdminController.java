@@ -6,16 +6,12 @@ import com.macro.mall.tiny.modules.ums.dto.UmsAdminParam;
 import com.macro.mall.tiny.modules.ums.model.UmsAdmin;
 import com.macro.mall.tiny.modules.ums.service.UmsAdminService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * <p>
@@ -32,6 +28,13 @@ public class UmsAdminController {
 
 	@Autowired
 	private UmsAdminService adminService;
+
+
+	@RequestMapping("/index")
+	public String index(){
+		adminService.index();
+		return "ds";
+	}
 
 	@RequestMapping("/register")
 	@ApiOperation("注册")
